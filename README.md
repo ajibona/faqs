@@ -1,0 +1,2 @@
+# faqs
+Frontendmentor | Faqs accordation
