@@ -1,0 +1,211 @@
+  @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+  *,
+  ::after,
+  ::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root{
+    --White: hsl(0, 0%, 100%);
+    --Light-pink: hsl(275, 100%, 97%);
+    --Grayish-purple: hsl(292, 16%, 49%);
+    --Dark-purple: hsl(292, 42%, 14%);
+
+    --fw-font-weight-small-400: 400;
+    --fw-font-weight-bold-600: 600;
+    --fw-font-weigh-extra-bold: 700;
+  }
+
+  body{
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    background-color: var(--Light-pink);
+    position: relative;
+    height: 100vh;
+  }
+
+  main{
+    height: 100%;
+  }
+  
+  .background-images-layout{
+    width: 100%;
+    height: 250px;
+    background-color: var(--Dark-purple);
+    position: absolute;
+    z-index: -1;
+  }
+
+  .mobile-bg{
+    width: 100%;
+    height: 100%;
+    background: url("/assets/images/background-pattern-mobile.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+  }
+
+  .desktop-bg{
+    display: none;
+  }
+
+  .wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container{
+    width: 330px;
+    height: auto;
+    z-index: 100;
+    background-color: var(--White);
+    border-radius: 8px;
+    box-shadow: 1px 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+  }
+
+  .heading{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  h1{
+    font-size: 2.2rem;
+  }
+
+  .faq-conatiner{
+    margin-block-start: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .faq-details{
+    border-bottom: 1px solid var(--Light-pink);
+    padding-block-end: 20px;
+  }
+
+  .faq-heading-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .faq-heading-text p{
+    max-width: 220px;
+    font-weight: var(--fw-font-weight-bold-600);
+    color: var(--Dark-purple);
+    font-size: 1rem;
+    transition: color .2s ease-in;
+    cursor: pointer;
+  }
+
+  .faq-heading-text p:hover{
+    color: #ad23db;
+  }
+
+  .faq-info{
+   max-height: 0;
+   overflow: hidden;
+   transition: all .3s ease-in-out;
+  }
+
+  .faq-info p{
+    margin-block-start: 20px;
+    font-size: .9rem;
+    font-weight: var(--fw-font-weight-small-400);
+    color: var(--Grayish-purple);
+    line-height: 20px;
+    transition: all .3s ease-in-out;
+  }
+
+  .faq-btn.active ~ .faq-info {
+    max-height: 300px;
+    transition: all .3s ease-in-out;
+  }
+
+  .faq-btn.active .close-btn{
+    display: block;
+  }
+
+  .faq-btn.active .open-btn{
+    display: none;
+  }
+
+  .mobile-star{
+    display: block;
+  }
+
+  .desktop-star{
+    display: none;
+  }
+
+  .faq-icon{
+    position: relative;
+    
+  }
+
+  .close-btn, .open-btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .close-btn{
+    display: none;
+  }
+
+
+/*========= Desktop Screen ============== */
+@media (width >= 37.5rem){
+  .container{
+    width: 500px;
+    border-radius: 15px;
+    padding: 30px 30px;
+  }
+
+  .desktop-bg{
+    width: 100%;
+    height: 100%;
+    background: url("/assets/images/background-pattern-desktop.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+  }
+
+  .mobile-bg{
+    display: none;
+  }
+
+ .faq-heading-text p{
+  font-size: .92rem;
+  min-width: 400px;
+ }
+
+  .faq-info{
+    font-size: .82rem;
+  }
+
+  h1{
+    font-size: 3rem;
+  }
+
+  .mobile-star{
+    display: none;
+  }
+
+  .desktop-star{
+    display: block;
+  }
+
+}
